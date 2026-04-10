@@ -7,15 +7,11 @@
   <meta name="description" content="Animation backed by neuroscience. Brand films, product videos and motion content that moves people."/>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
-/* === HERO === */
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { margin: 0 !important; padding: 0 !important; background: #151515; color: #e8eaf0; font-family: "DM Sans", sans-serif; }
     .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: #1e2130; border: 1px solid rgba(255,255,255,0.07); border-radius: 999px; padding: 7px 16px; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #9099b5; margin-bottom: 32px; }
     .hero-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 8px #4ade80; }
   
-/* === WHATWEDO === */
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { background: #151515 !important; color: #e8eaf0; font-family: "DM Sans", sans-serif; margin: 0 !important; padding: 0 !important; }
     #services { background: #151515 !important; }
@@ -45,8 +41,6 @@
     .span2 { grid-column: span 2; }
     @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .span2 { grid-column: span 1; } #services > div { padding: 0 24px; } }
   
-/* === WORK === */
-
 *{box-sizing:border-box;margin:0;padding:0;}
 html,body{margin:0!important;padding:0!important;background:#151515!important;color:#e8eaf0;font-family:"DM Sans",sans-serif;}#work{background:#151515!important;}
 #work>div{max-width:1200px;padding:0 60px;margin:0 auto;}
@@ -57,10 +51,10 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
 .pc{background:#13161e;border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color .3s,transform .3s;}
 .pc:hover{border-color:rgba(255,255,255,.17);transform:translateY(-3px);}
 .pt{display:inline-block;background:#1e2130;border-radius:999px;padding:4px 10px;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#9099b5;margin-bottom:7px;}
-.fu{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease;}
+.fu{opacity:1;transform:translateY(0);}
 .fu.visible{opacity:1;transform:translateY(0);}
-.mo{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;}.mo.open{display:flex;}
-.mo.open{opacity:1;pointer-events:all;}
+.mo{position:fixed;inset:0;background:rgba(0,0,0,.9);backdrop-filter:blur(10px);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s;visibility:hidden;}
+.mo.open{opacity:1;pointer-events:all;visibility:visible;}
 .md{background:#13161e;border:1px solid rgba(255,255,255,.1);border-radius:24px;width:100%;max-width:740px;max-height:88vh;overflow-y:auto;transform:translateY(20px) scale(.98);transition:transform .3s;scrollbar-width:thin;}
 .mo.open .md{transform:translateY(0) scale(1);}
 .mh{position:sticky;top:0;background:#13161e;border-bottom:1px solid rgba(255,255,255,.07);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;z-index:10;border-radius:24px 24px 0 0;}
@@ -81,8 +75,6 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
 @media(max-width:900px){.wg{grid-template-columns:repeat(2,1fr)!important;}}
 @media(max-width:600px){.wg{grid-template-columns:1fr 1fr!important;}#work>div{padding:0 24px;}}
 
-/* === TESTIMONIALS === */
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { margin: 0 !important; padding: 0 !important; background: #151515; color: #e8eaf0; font-family: "DM Sans", sans-serif; }
     .section-label { text-transform: uppercase; letter-spacing: 0.15em; font-size: 11px; color: #7c8096; font-weight: 500; margin-bottom: 16px; }
@@ -96,14 +88,12 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
     @media (max-width: 900px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr) !important; } }
     @media (max-width: 600px) { .testimonials-grid { grid-template-columns: 1fr !important; } #testimonials > div { padding: 60px 24px !important; } }
   
-/* === ABOUT_FOOTER === */
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { background: #151515 !important; color: #e8eaf0; font-family: "DM Sans", sans-serif; margin: 0 !important; padding: 0 !important; }
 
     /* ABOUT */
     #about { background: #151515; }
-    #about > div { max-width: 1200px; margin: 0 auto; padding: 80px 60px 200px; }
+    #about > div { max-width: 1200px; margin: 0 auto; padding: 80px 60px 100px; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
     .about-tag { text-transform: uppercase; letter-spacing: .15em; font-size: 11px; color: #7c8096; font-weight: 500; margin-bottom: 16px; }
     .about-headline { font-family: "Syne", sans-serif; font-size: clamp(28px, 3.5vw, 48px); font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 24px; }
@@ -120,7 +110,7 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
 
     /* CTA */
     #cta { background: #151515; }
-    #cta > div { max-width: 1200px; margin: 0 auto; padding: 20px 60px 80px; }
+    #cta > div { max-width: 1200px; margin: 0 auto; padding: 180px 60px 80px; }
     .cta-inner { background: linear-gradient(135deg, #1a1d27 0%, #13161e 100%); border: 1px solid rgba(255,255,255,.07); border-radius: 24px; padding: 100px 80px; text-align: center; position: relative; overflow: hidden; }
     .cta-inner::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(200,82,26,.12) 0%, transparent 70%); pointer-events: none; }
     .cta-label { text-transform: uppercase; letter-spacing: .15em; font-size: 11px; color: #c8521a; font-weight: 500; margin-bottom: 28px; }
@@ -158,12 +148,9 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
       .footer-top { flex-direction: column; }
     }
   
-/* === SPACING === */
-#services{margin-top:80px;}#work{margin-top:80px;}#testimonials{margin-top:160px;}#about{margin-top:80px;}#cta{margin-top:20px;}</style>
+#services{margin-top:80px;}#work{margin-top:80px;padding-top:80px;}#testimonials{margin-top:190px;}#about{margin-top:80px;}#cta{margin-top:0;}</style>
 </head>
 <body>
-
-<!-- ===== HERO ===== -->
 <!-- HERO -->
 <nav style="position:fixed;top:0;left:0;right:0;z-index:50;padding:18px 60px;display:flex;align-items:center;justify-content:space-between;background:rgba(13,15,20,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);">
   <a href="/" style="font-family:Syne,sans-serif;font-weight:800;font-size:16px;color:#ffffff;text-decoration:none;">BLAP STUDIOS</a>
@@ -171,7 +158,6 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
     <ul style="display:flex;gap:28px;list-style:none;margin:0;">
       <li><a href="#services" style="font-size:13px;color:#7c8096;text-decoration:none;">Services</a></li>
       <li><a href="#work" style="font-size:13px;color:#7c8096;text-decoration:none;">Work</a></li>
-      <li><a href="/blog" style="font-size:13px;color:#7c8096;text-decoration:none;">Blog</a></li>
     </ul>
     <a href="https://calendly.com/blapstudios/15min" target="_blank" style="padding:10px 22px;background:#c8521a;color:#fff;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;">Book a strategy call</a>
   </div>
@@ -182,15 +168,15 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
   <h1 style="font-family:Syne,sans-serif;font-size:clamp(28px,4.2vw,58px);font-weight:800;line-height:1.06;color:#ffffff;max-width:820px;margin-bottom:22px;">We make brands and products easy to understand — and impossible to forget.</h1>
   <p style="font-family:Syne,sans-serif;font-size:clamp(14px,2vw,17px);color:#e8eaf0;line-height:1.6;max-width:760px;margin-bottom:10px;font-weight:600;">A creative animation studio backed by neuroscience and consumer psychology — we craft character storytelling, brand films, and product animation that actually moves people.</p>
   
-  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:60px;">
+  <div style="display:flex;justify-content:center;margin-bottom:40px;">
     <a href="https://calendly.com/blapstudios/15min" target="_blank" style="padding:14px 28px;background:#c8521a;color:#fff;border-radius:999px;font-size:14px;font-weight:600;text-decoration:none;">Book a strategy call</a>
-    <div style="width:100%;max-width:1100px;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);box-shadow:0 40px 120px rgba(0,0,0,0.65);margin:40px auto 0;display:block;">
+  </div>
+  <div style="width:100%;max-width:1100px;aspect-ratio:16/9;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);box-shadow:0 40px 120px rgba(0,0,0,0.65);margin:40px auto 0;display:block;">
     <video src="https://res.cloudinary.com/datcjda4o/video/upload/v1775506822/Reel_2026_-_BlapStudios_dxofav.mov" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;border-radius:20px;"></video>
   </div>
 </div>
 </section>
-<!-- ===== WHATWEDO ===== -->
-<section id="services" style="margin-top:80px;">
+<section id="services">
   <div>
     <p class="section-label fade-up">What We Do</p>
     <h2 class="section-headline fade-up">Four ways to work together</h2>
@@ -268,11 +254,8 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
     </div>
   </div>
 </section>
-
-
-<!-- ===== WORK ===== -->
-<section id="work" style="margin-top:80px;" style="overflow:hidden;position:relative;z-index:2;" style="background:#151515;">
-<div>
+<section id="work" style="overflow:hidden;position:relative;z-index:2;background:#151515;">
+<div style="max-width:1200px;margin:0 auto;padding:80px 60px 100px;">
 <p class="sl">Our Work</p>
 <h2 class="sh">Projects that move people</h2>
 <p class="ss">From product launches to brand films — every project is built to communicate clearly and hit emotionally.</p>
@@ -414,10 +397,9 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
 <div class="cs"><div class="cl">Results</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;"><div class="rs"><div class="rn">🎓</div><div class="rl">Onboarding platform</div></div><div class="rs"><div class="rn">↑</div><div class="rl">Trial signups</div></div><div class="rs"><div class="rn">⚡</div><div class="rl">Under 90 seconds</div></div></div></div>
 </div>
 </div></div></div>
-<!-- ===== TESTIMONIALS ===== -->
 <!-- TESTIMONIALS -->
-<section id="testimonials" style="margin-top:160px;" style="position:relative;z-index:1;">
-  <div style="max-width:1200px;margin:0 auto;padding:40px 60px;">
+<section id="testimonials" style="position:relative;z-index:1;margin-top:120px;">
+  <div style="max-width:1200px;margin:0 auto;padding:80px 60px 40px;">
     <p class="section-label">Clients</p>
     <h2 class="section-headline">What people say</h2>
     <p class="section-sub">From founders, creators, and teams who've worked with BLAP Studios.</p>
@@ -530,10 +512,8 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
     </div>
   </div>
 </section>
-
-<!-- ===== ABOUT_FOOTER ===== -->
 <!-- ABOUT -->
-<section id="about" style="margin-top:80px;">
+<section id="about">
   <div>
     <div class="about-grid">
       <div>
@@ -570,7 +550,7 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
 </section>
 
 <!-- CTA -->
-<section id="cta" style="margin-top:20px;" style="margin-top:100px;">
+<section id="cta" style="margin-top:50px;">
   <div>
     <div class="cta-inner">
       <p class="cta-label">Let's work together</p>
@@ -601,8 +581,7 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
           <h4>Company</h4>
           <a href="#about">About</a>
           <a href="#work">Work</a>
-          <a href="/blog">Blog</a>
-          <a href="/cdn-cgi/l/email-protection#40292e262f00222c213033343524292f336e232f2d"><span class="__cf_email__" data-cfemail="462f28202906242a2736353233222f29356825292b">[email&#160;protected]</span></a>
+          <a href="mailto:info@blapstudios.com" style="font-size:13px;color:#7c8096;text-decoration:none;">info@blapstudios.com</a>
         </div>
       </div>
     </div>
@@ -620,12 +599,11 @@ html,body{margin:0!important;padding:0!important;background:#151515!important;co
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-const srvObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); srvObserver.unobserve(e.target); } });
+const srvObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); srvObs.unobserve(e.target); } });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(el => srvObserver.observe(el));
+  document.querySelectorAll('.fade-up').forEach(el => srvObs.observe(el));
 
 function openM(id){document.getElementById('mo-'+id).classList.add('open');document.body.style.overflow='hidden';}
 function closeM(){document.querySelectorAll('.mo').forEach(m=>m.classList.remove('open'));document.body.style.overflow='';}
@@ -639,47 +617,14 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM();});
 const so=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');so.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.fu').forEach(el=>so.observe(el));
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } })
+const testObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add("visible"); testObs.unobserve(e.target); } })
   }, {threshold: 0.08});
-  document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+  document.querySelectorAll(".fade-up").forEach(el => testObs.observe(el));
 
-const aboutObserver = new IntersectionObserver(entries => {
-    entries.forE
-<script>
-/* hero */
-
-/* whatwedo */
-
-  const srvObserver2 = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); srvObserver.unobserve(e.target); } });
+const aboutObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); aboutObs.unobserve(e.target); } });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(el => srvObserver.observe(el));
-
-/* work */
-
-function openM(id){document.getElementById('mo-'+id).classList.add('open');document.body.style.overflow='hidden';}
-function closeM(){document.querySelectorAll('.mo').forEach(m=>m.classList.remove('open'));document.body.style.overflow='';}
-function swTab(p,t,btn){
-  document.querySelectorAll('[id^="'+p+'-"]').forEach(el=>el.classList.remove('active'));
-  document.getElementById(p+'-'+t).classList.add('active');
-  btn.closest('.mb').querySelectorAll('.tb').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeM();});
-const so2=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');so.unobserve(e.target);}});},{threshold:0.08});
-document.querySelectorAll('.fu').forEach(el=>so.observe(el));
-
-/* testimonials */
-
-  const observer2 = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); } })
-  }, {threshold: 0.08});
-  document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
-
-/* about_footer */
-
-
+  document.querySelectorAll('.fade-up').forEach(el => aboutObs.observe(el));
 </script>
 </body>
-</html>
