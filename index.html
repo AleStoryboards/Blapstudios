@@ -55,14 +55,17 @@
   .menu-btn{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink)}
 
   /* HERO */
-  .hero{text-align:center;padding:84px 0 56px}
-  .hero h1{font-size:clamp(34px,5vw,60px);max-width:880px;margin:18px auto 18px;font-weight:800}
-  .hero .lead{font-size:19px;color:var(--ink-soft);max-width:620px;margin:0 auto 30px}
-  .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-  .trust{margin-top:48px}
+  .hero{padding:72px 0 60px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero h1{font-size:clamp(32px,4.4vw,54px);margin:16px 0 18px;font-weight:800}
+  .hero .lead{font-size:18px;color:var(--ink-soft);max-width:520px;margin:0 0 28px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .trust{margin-top:40px}
   .tlabel{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
-  .logos{display:flex;flex-wrap:wrap;gap:12px 30px;align-items:center;justify-content:center}
+  .logos{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center}
   .logos span{font-family:'Bricolage Grotesque';font-weight:600;font-size:17px;color:var(--ink);opacity:.6}
+  .hero-reel{aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 110px rgba(0,0,0,.6);background:#000}
+  .hero-reel video{width:100%;height:100%;object-fit:cover;display:block}
 
   /* SERVICES */
   .services{display:grid;grid-template-columns:1fr 1fr;gap:22px}
@@ -107,7 +110,7 @@
   .case .case-body h3{margin-bottom:6px}
   .case .desc{font-size:14px;color:var(--ink-soft);line-height:1.5}
   /* TESTIMONIALS */
-  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
   .tcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:14px}
   .tcard.vid{padding:0;overflow:hidden}
   .tcard .stars{color:#f59e0b;font-size:13px;letter-spacing:2px}
@@ -115,11 +118,35 @@
   .tcard .ta{display:flex;align-items:center;gap:11px}
   .tcard .tav{width:38px;height:38px;border-radius:50%;overflow:hidden;border:1px solid var(--line);flex:0 0 auto}
   .tcard .tav img{width:100%;height:100%;object-fit:cover;display:block}
+  .tcard .tav.ini{display:flex;align-items:center;justify-content:center;background:var(--paper-2);font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:13px;color:var(--ink)}
   .tcard .tn{font-weight:600;font-size:14px;color:var(--ink)}
   .tcard .tr{font-size:12px;color:var(--ink-soft)}
   .tcard .tvid{aspect-ratio:16/9;background:#000}
+  .tcard.vid .tvid{aspect-ratio:9/16}
   .tcard .tvid iframe{width:100%;height:100%;border:0;display:block}
   .tcard .tbody{padding:18px;display:flex;flex-direction:column;gap:12px}
+  /* VIDEO MODAL */
+  .more-btn{margin-top:14px;align-self:flex-start;background:transparent;border:1px solid var(--line);color:var(--ink);font-family:'Inter',sans-serif;font-weight:600;font-size:13px;padding:9px 16px;border-radius:100px;cursor:pointer;transition:background .15s}
+  .more-btn:hover{background:rgba(255,255,255,.06)}
+  .vmodal{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:40px 20px}
+  .vmodal.open{display:flex}
+  .vmodal-box{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius-lg);max-width:820px;width:100%;padding:30px;margin:auto}
+  .vm-x{position:absolute;top:16px;right:16px;width:34px;height:34px;border-radius:50%;background:var(--paper-2);border:1px solid var(--line);color:var(--ink);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .vm-head{margin-bottom:18px;padding-right:40px}
+  .vm-head h3{font-size:24px;margin:10px 0 6px}
+  .vm-vid{aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#000;margin-bottom:16px}
+  .vm-vid iframe,.vm-vid video{width:100%;height:100%;border:0;display:block;object-fit:cover}
+  .vm-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 12px}
+  .vm-grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .vm-grid2 .vm-vid{margin-bottom:0}
+  .vm-vid.vert{aspect-ratio:9/16}
+  .vm-sbg{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .vm-sbg img{width:100%;border-radius:8px;display:block}
+  .vm-mog{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
+  .vm-mog img{width:100%;height:160px;object-fit:cover;border-radius:10px;display:block}
+  .vm-art{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+  .vm-art img{width:100%;border-radius:10px;display:block}
+  @media (max-width:640px){.vm-grid2{grid-template-columns:1fr}.vm-sbg{grid-template-columns:repeat(2,1fr)}}
 
   /* WHY IT STICKS */
   .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
@@ -149,7 +176,9 @@
   .foot-links a:hover{color:var(--ink)}
 
   @media (max-width:860px){
-    .services,.cases,.why,.tgrid{grid-template-columns:1fr}
+    .hero-grid,.services,.cases,.why,.tgrid{grid-template-columns:1fr}
+    .hero{padding:52px 0 40px}
+    .logos{justify-content:flex-start}
     .founder-grid{grid-template-columns:1fr;gap:28px}
     .founder-photo{max-width:260px}
     .nav-links{display:none}
@@ -172,19 +201,24 @@
 
 <a id="top"></a>
 <section class="hero">
-  <div class="wrap">
-    <span class="eyebrow">Storytelling systems, powered by animation</span>
-    <h1>Find your brand's winning stories.</h1>
-    <p class="lead">The ones that stop the scroll, sell the product, and stay impossible to forget. Two systems, depending on where you are: win more on paid, or make a complex product instantly clear.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="https://calendly.com/blapstudios/15min">Book a call →</a>
-      <a class="btn btn-ghost" href="#work">See the work</a>
-    </div>
-    <div class="trust">
-      <div class="tlabel">Trusted by teams at</div>
-      <div class="logos">
-        <span>VanHack</span><span>Burger King</span><span>Swiss Airlines</span><span>IFF</span><span>Invisible People</span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Storytelling systems, powered by animation</span>
+      <h1>Find your brand's winning stories.</h1>
+      <p class="lead">The ones that stop the scroll, sell the product, and stay impossible to forget. Two systems, depending on where you are: win more on paid, or make a complex product instantly clear.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://calendly.com/blapstudios/15min">Book a call →</a>
+        <a class="btn btn-ghost" href="#work">See the work</a>
       </div>
+      <div class="trust">
+        <div class="tlabel">Trusted by teams at</div>
+        <div class="logos">
+          <span>VanHack</span><span>Burger King</span><span>Swiss Airlines</span><span>IFF</span><span>Invisible People</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-reel">
+      <video src="https://res.cloudinary.com/datcjda4o/video/upload/v1786461383/Video_2026_reel_tw8a2u.mov" autoplay muted loop playsinline></video>
     </div>
   </div>
 </section>
@@ -247,6 +281,7 @@
           <span class="itag dtc">Ad Creative</span>
           <h3>Swiss Selection</h3>
           <p class="desc">Product launch film · Burger King Switzerland</p>
+          <button class="more-btn" onclick="openV('swiss')">See storyboard &amp; making-of →</button>
         </div>
       </div>
 
@@ -256,6 +291,7 @@
           <span class="itag dtc">Hype Video</span>
           <h3>CometCash</h3>
           <p class="desc">Fintech app launch · Expo &amp; networking</p>
+          <button class="more-btn" onclick="openV('comet')">See storyboard &amp; making-of →</button>
         </div>
       </div>
 
@@ -265,11 +301,12 @@
           <span class="itag dtc">Ad Creative</span>
           <h3>Swiss Airlines</h3>
           <p class="desc">LED screen campaign · Win a trip to Switzerland</p>
+          <button class="more-btn" onclick="openV('swissair')">See storyboard →</button>
         </div>
       </div>
 
       <div class="case">
-        <div class="case-vid"><iframe src="https://www.youtube.com/embed/cxWhLqewL8k" title="Zeliq" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="case-vid"><iframe src="https://player.vimeo.com/video/1172619555" title="Zeliq" loading="lazy" allow="fullscreen; picture-in-picture" allowfullscreen></iframe></div>
         <div class="case-body">
           <span class="itag tech">Explainer Video</span>
           <h3>Zeliq</h3>
@@ -278,11 +315,12 @@
       </div>
 
       <div class="case">
-        <div class="case-vid"><iframe src="https://www.youtube.com/embed/u4ucjBsxLOA" title="IWRC" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="case-vid"><iframe src="https://www.youtube.com/embed/cxWhLqewL8k" title="IWRC" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="case-body">
           <span class="itag tech">Product Demo</span>
           <h3>IWRC</h3>
           <p class="desc">Product demo · Educational content modules</p>
+          <button class="more-btn" onclick="openV('iwrc')">See all 5 videos →</button>
         </div>
       </div>
 
@@ -319,6 +357,36 @@
           <span class="itag tech">Brand Film</span>
           <h3>Invisible People</h3>
           <p class="desc">Nonprofit storytelling · Awareness campaign</p>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-vid"><iframe src="https://www.youtube.com/embed/0q4A6PpoF2w" title="MemePad" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="case-body">
+          <span class="itag dtc">Hype Video</span>
+          <h3>MemePad</h3>
+          <p class="desc">Crypto launchpad · Hype video</p>
+          <button class="more-btn" onclick="openV('memepad')">See animatic →</button>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-vid"><iframe src="https://www.youtube.com/embed/H7xix3UIYqY" title="Betuverse" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="case-body">
+          <span class="itag dtc">Brand Film</span>
+          <h3>Betuverse</h3>
+          <p class="desc">Gaming brand · Animated film</p>
+          <button class="more-btn" onclick="openV('betuverse')">See animatic &amp; concept art →</button>
+        </div>
+      </div>
+
+      <div class="case">
+        <div class="case-vid"><iframe src="https://www.youtube.com/embed/t1rdiIgCbkU" title="Conexus Technology" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="case-body">
+          <span class="itag tech">Explainer Video</span>
+          <h3>Conexus Technology</h3>
+          <p class="desc">Tech explainer · Product storytelling</p>
+          <button class="more-btn" onclick="openV('conexus')">See more videos →</button>
         </div>
       </div>
 
@@ -373,10 +441,18 @@
       </div>
 
       <div class="tcard vid">
-        <div class="tvid"><iframe src="https://player.vimeo.com/video/851126600" title="Paul Rogash testimonial" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div>
+        <div class="tvid"><iframe src="https://www.youtube.com/embed/xLM41i5Pi2o" title="Paul Rogash testimonial" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
         <div class="tbody">
           <div class="stars">★★★★★</div>
           <div class="ta"><div class="tav"><img src="https://res.cloudinary.com/datcjda4o/image/upload/v1775757042/images_wkoqrk.jpg" alt="Paul Rogash"></div><div><div class="tn">Paul Rogash</div><div class="tr">CEO &amp; Founder · Betu</div></div></div>
+        </div>
+      </div>
+
+      <div class="tcard vid">
+        <div class="tvid"><iframe src="https://www.youtube.com/embed/BagYndsYsj0" title="Joseph Holmes testimonial" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="tbody">
+          <div class="stars">★★★★★</div>
+          <div class="ta"><div class="tav ini">JH</div><div><div class="tn">Joseph Holmes</div><div class="tr">Founder · Conexus Technology</div></div></div>
         </div>
       </div>
 
@@ -462,6 +538,190 @@
     <div class="foot-meta">© 2026 Blap Studios · Rio de Janeiro</div>
   </div>
 </footer>
+
+<!-- IWRC VIDEO MODAL — the full set of videos made for IWRC -->
+<div class="vmodal" id="vm-iwrc" onclick="if(event.target===this)closeV('iwrc')">
+  <div class="vmodal-box">
+    <button class="vm-x" onclick="closeV('iwrc')" aria-label="Close">✕</button>
+    <div class="vm-head">
+      <span class="itag tech">Product Demo</span>
+      <h3>IWRC</h3>
+      <p class="desc">Recycling platform for LATAM · Product demo + educational content</p>
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/cxWhLqewL8k" title="IWRC — overview" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="vm-label">Educational content modules</div>
+    <div class="vm-grid2">
+      <div class="vm-vid"><iframe src="https://www.youtube.com/embed/u4ucjBsxLOA" title="IWRC — educational 1" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vm-vid"><iframe src="https://www.youtube.com/embed/2scZQAW9gW4" title="IWRC — educational 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+    <div class="vm-label">Social media — Shorts &amp; Reels</div>
+    <div class="vm-grid2">
+      <div class="vm-vid vert"><iframe src="https://www.youtube.com/embed/oLsHeY9_F_c" title="IWRC — short 1" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="vm-vid vert"><iframe src="https://www.youtube.com/embed/4JYjouG1m10" title="IWRC — short 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    </div>
+  </div>
+</div>
+
+<!-- COMETCASH MODAL — overview + storyboard + making-of -->
+<div class="vmodal" id="vm-comet" onclick="if(event.target===this)closeV('comet')">
+  <div class="vmodal-box">
+    <button class="vm-x" onclick="closeV('comet')" aria-label="Close">✕</button>
+    <div class="vm-head">
+      <span class="itag dtc">Hype Video · Fintech</span>
+      <h3>CometCash</h3>
+      <p class="desc">Cinematic 3D hype video with anthropomorphic characters, made for expos and networking events.</p>
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/0_ryGsNdcJM" title="CometCash — hype video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+    <div class="vm-label">Storyboard — 23 frames</div>
+    <div class="vm-sbg">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063043/Screenshot_2026-03-08_at_2.33.04_PM_dghp5c.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063043/Screenshot_2026-03-08_at_2.33.14_PM_zldgth.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063043/Screenshot_2026-03-08_at_2.42.27_PM_bditg2.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063043/Screenshot_2026-03-08_at_2.33.19_PM_pxra1h.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063044/Screenshot_2026-03-08_at_2.33.31_PM_nmovpb.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063044/Screenshot_2026-03-08_at_2.43.09_PM_udzolx.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063044/Screenshot_2026-03-08_at_2.43.28_PM_nxikkk.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063044/Screenshot_2026-03-08_at_2.39.27_PM_w7o7ak.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063044/Screenshot_2026-03-08_at_2.48.23_PM_worfx2.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063045/Screenshot_2026-03-08_at_2.42.37_PM_pqs2sw.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063045/Screenshot_2026-03-08_at_2.39.37_PM_kqqkvh.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063045/Screenshot_2026-03-08_at_2.39.12_PM_q40tyd.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063045/Screenshot_2026-03-08_at_2.39.21_PM_u0otoq.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063046/Screenshot_2026-03-08_at_2.39.56_PM_anldjb.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063045/Screenshot_2026-03-08_at_2.42.59_PM_yqhl3p.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063046/Screenshot_2026-03-08_at_2.49.07_PM_un2hrx.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063046/Screenshot_2026-03-08_at_2.42.52_PM_a2qjuu.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063046/Screenshot_2026-03-08_at_2.48.30_PM_w4kfih.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063046/Screenshot_2026-03-08_at_2.39.50_PM_io3b6g.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063047/Screenshot_2026-03-08_at_2.48.38_PM_upisen.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063047/Screenshot_2026-03-08_at_2.48.49_PM_ptqiky.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063047/Screenshot_2026-03-08_at_2.49.14_PM_fe8i0f.png" alt="CometCash storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063051/Screenshot_2026-03-08_at_2.33.25_PM_lwfclh.png" alt="CometCash storyboard frame">
+    </div>
+
+    <div class="vm-label">Making of — process &amp; renders</div>
+    <div class="vm-mog">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063421/Screenshot_2026-03-08_at_3.09.15_PM_t4yord.png" alt="CometCash making of">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063421/Screenshot_2026-03-08_at_3.10.16_PM_wwlhyr.png" alt="CometCash making of">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063568/lion_NEW-tail_h2l3bm.png" alt="CometCash making of">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063480/Screenshot_2026-03-08_at_2.59.40_PM_pbenkc.png" alt="CometCash making of">
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/MZfsAY4kDnI" title="CometCash — making of" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  </div>
+</div>
+
+<!-- SWISS SELECTION (Burger King) MODAL — overview + storyboard + making-of -->
+<div class="vmodal" id="vm-swiss" onclick="if(event.target===this)closeV('swiss')">
+  <div class="vmodal-box">
+    <button class="vm-x" onclick="closeV('swiss')" aria-label="Close">✕</button>
+    <div class="vm-head">
+      <span class="itag dtc">Ad Creative · Burger King</span>
+      <h3>Swiss Selection</h3>
+      <p class="desc">High-impact 3D launch film for the Rösti Burger — full production from animatic to final composite, with 3D food animation and fire compositing.</p>
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/zUDrMnKlQNg" title="Swiss Selection — launch film" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+    <div class="vm-label">Storyboard — 6 frames</div>
+    <div class="vm-sbg">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063329/Screenshot_2026-03-08_at_11.54.36_AM_xrhove.png" alt="Swiss Selection storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063314/Screenshot_2026-03-08_at_11.54.54_AM_ojxlae.png" alt="Swiss Selection storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063315/Screenshot_2026-03-08_at_11.55.01_AM_mvenzi.png" alt="Swiss Selection storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063315/Screenshot_2026-03-08_at_11.55.07_AM_bn0ouj.png" alt="Swiss Selection storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063315/Screenshot_2026-03-08_at_11.55.12_AM_zedunl.png" alt="Swiss Selection storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773063315/Screenshot_2026-03-08_at_11.55.18_AM_ryfa6i.png" alt="Swiss Selection storyboard frame">
+    </div>
+
+    <div class="vm-label">Making of</div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/XAhPWM4rZEY" title="Swiss Selection — making of" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  </div>
+</div>
+
+<!-- SWISS AIRLINES MODAL — overview + storyboard -->
+<div class="vmodal" id="vm-swissair" onclick="if(event.target===this)closeV('swissair')">
+  <div class="vmodal-box">
+    <button class="vm-x" onclick="closeV('swissair')" aria-label="Close">✕</button>
+    <div class="vm-head">
+      <span class="itag dtc">Ad Creative</span>
+      <h3>Swiss Airlines</h3>
+      <p class="desc">LED screen campaign for the "Win a trip to Switzerland" activation.</p>
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/WygfwVTamcs" title="Swiss Airlines — LED campaign" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+    <div class="vm-label">Storyboard — 8 frames</div>
+    <div class="vm-sbg">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071462/Screenshot_2026-03-09_at_12.47.52_PM_ykjfzb.png" alt="Swiss Airlines storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071462/Screenshot_2026-03-09_at_12.49.27_PM_sy9mx8.png" alt="Swiss Airlines storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071463/Screenshot_2026-03-09_at_12.48.43_PM_wqo2qg.png" alt="Swiss Airlines storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071462/Screenshot_2026-03-09_at_12.49.14_PM_v35xyh.png" alt="Swiss Airlines storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071463/Screenshot_2026-03-09_at_12.49.21_PM_e70hre.png" alt="Swiss Airlines storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071463/Screenshot_2026-03-09_at_12.48.50_PM_ie7ilf.png" alt="Swiss Airlines storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071463/Screenshot_2026-03-09_at_12.48.38_PM_e93xql.png" alt="Swiss Airlines storyboard frame">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1773071463/Screenshot_2026-03-09_at_12.48.59_PM_qo3hvf.png" alt="Swiss Airlines storyboard frame">
+    </div>
+  </div>
+</div>
+
+<!-- MEMEPAD MODAL — final video + animatic -->
+<div class="vmodal" id="vm-memepad" onclick="if(event.target===this)closeV('memepad')">
+  <div class="vmodal-box">
+    <button class="vm-x" onclick="closeV('memepad')" aria-label="Close">✕</button>
+    <div class="vm-head">
+      <span class="itag dtc">Hype Video · Crypto</span>
+      <h3>MemePad</h3>
+      <p class="desc">Hype video for a Solana meme-coin launchpad.</p>
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/0q4A6PpoF2w" title="MemePad — hype video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+    <div class="vm-label">Animatic</div>
+    <div class="vm-vid"><video src="https://res.cloudinary.com/datcjda4o/video/upload/v1786540685/memepad_animatic_m4yavg.mov" controls muted playsinline preload="metadata"></video></div>
+
+    <a class="more-btn" href="https://x.com/MemePadSol/status/1800222355408794034" target="_blank" rel="noopener" style="margin-top:20px;text-decoration:none">See it live on X →</a>
+  </div>
+</div>
+
+<!-- CONEXUS MODAL — multiple pieces -->
+<div class="vmodal" id="vm-conexus" onclick="if(event.target===this)closeV('conexus')">
+  <div class="vmodal-box">
+    <button class="vm-x" onclick="closeV('conexus')" aria-label="Close">✕</button>
+    <div class="vm-head">
+      <span class="itag tech">Explainer Video</span>
+      <h3>Conexus Technology</h3>
+      <p class="desc">Tech explainer and product storytelling across multiple pieces.</p>
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/t1rdiIgCbkU" title="Conexus — explainer" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="vm-label">More from Conexus</div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/WTVP2dzrdAY" title="Conexus — piece 2" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  </div>
+</div>
+
+<!-- BETUVERSE MODAL — film + animatic (concept art pending) -->
+<div class="vmodal" id="vm-betuverse" onclick="if(event.target===this)closeV('betuverse')">
+  <div class="vmodal-box">
+    <button class="vm-x" onclick="closeV('betuverse')" aria-label="Close">✕</button>
+    <div class="vm-head">
+      <span class="itag dtc">Brand Film</span>
+      <h3>Betuverse</h3>
+      <p class="desc">Animated film for a gaming brand.</p>
+    </div>
+    <div class="vm-vid"><iframe src="https://www.youtube.com/embed/H7xix3UIYqY" title="Betuverse — film" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="vm-label">Animatic</div>
+    <div class="vm-vid"><video src="https://res.cloudinary.com/datcjda4o/video/upload/v1786747210/VIDEO-2021-12-06-09-02-29_apbu6f.mp4" controls muted playsinline preload="metadata"></video></div>
+
+    <div class="vm-label">Concept art</div>
+    <div class="vm-art">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1786747198/CONCEPT_ART_RICH_GUY_mm9dfh.jpg" alt="Betuverse concept art — Rich Guy">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1786747198/CONCEPT_ART_VIP_hostess_cnkcan.jpg" alt="Betuverse concept art — VIP Hostess">
+      <img loading="lazy" src="https://res.cloudinary.com/datcjda4o/image/upload/v1786747197/CONCEPT_ART_Chauffeur_ygzokl.jpg" alt="Betuverse concept art — Chauffeur">
+    </div>
+  </div>
+</div>
+
+<script>
+  function openV(id){var m=document.getElementById('vm-'+id);if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+  function closeV(id){var m=document.getElementById('vm-'+id);if(m){m.classList.remove('open');document.body.style.overflow='';}}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){document.querySelectorAll('.vmodal.open').forEach(function(m){m.classList.remove('open');});document.body.style.overflow='';}});
+</script>
 
 </body>
 </html>
